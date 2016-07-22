@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require_relative "../lib/rorr"
+
+init = Rorr::Init.new(ARGV, STDIN, STDOUT)
+init.run
