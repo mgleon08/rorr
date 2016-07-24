@@ -10,6 +10,7 @@ module Rorr
       Config.stdin  = @stdin
       Config.stdout = @stdout
       parse_options
+      Rorr::Main.choose
     end
 
     private

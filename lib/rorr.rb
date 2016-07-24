@@ -1,6 +1,7 @@
 $: << File.dirname(__FILE__)
 
 require 'optparse'
+require 'colorize'
 
 require "rorr/version"
 
