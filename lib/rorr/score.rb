@@ -15,6 +15,14 @@ module Rorr
       def add_skip
         @skip += 1
       end
+
+      def total
+        @correct + @wrong + @skip
+      end
+
+      def correct_rate
+        ( correct.to_f / total.to_f )  * 100
+      end
     end
   end
 end

@@ -34,6 +34,14 @@ module Rorr
         gets
         system "clear"
       end
+
+      def result
+        puts "\nResult:"
+        puts "Correct: #{Score.correct}, Wrong: #{Score.wrong},  Skip: #{Score.skip}\n"
+        puts "Correct Rate: #{Score.correct_rate}%"
+        puts "\nEnter to exit\n"
+        gets
+      end
     end
   end
 end

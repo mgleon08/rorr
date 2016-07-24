@@ -35,6 +35,7 @@ module Rorr
         end
         UI.solution(question[:sol])
       end
+      UI.result
     end
 
     private
