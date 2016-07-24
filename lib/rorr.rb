@@ -1,5 +1,7 @@
 $: << File.dirname(__FILE__)
 
+require 'optparse'
+
 require "rorr/version"
 
 require "rorr/ui"
