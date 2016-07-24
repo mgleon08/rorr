@@ -20,6 +20,20 @@ module Rorr
         puts "1. Don't ask me Ruby or Rails"
         puts "0. exit\n\n"
       end
+
+      def question(question, index)
+        puts "\n=============================="
+        puts "Question #{ index } :"
+        puts "=============================="
+        puts "#{question}"
+        puts "==============================\n"
+      end
+
+      def solution(sol)
+        puts_with_delay "\nsol:" + sol + "\nEnter to next"
+        gets
+        system "clear"
+      end
     end
   end
 end
