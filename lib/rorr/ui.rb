@@ -7,7 +7,7 @@ module Rorr
 
       def gets
         printf "> "
-        Config.stdin.gets.chomp! if Config.stdin
+        Config.stdin ? Config.stdin.gets.chomp! : ''
       end
 
       def puts_with_delay(msg)
