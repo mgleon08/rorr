@@ -1,6 +1,6 @@
 module Rorr
   class Config
-    @delay = 0.6
+    @stdin, @stdout, @delay, @level = STDIN, STDOUT, 0.6, 'normal'
     class << self
       attr_accessor :stdin, :stdout, :delay, :topic
     end

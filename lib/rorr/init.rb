@@ -1,14 +1,10 @@
 module Rorr
   class Init
-    def initialize(arguments, stdin, stdout)
+    def initialize(arguments)
       @arguments = arguments
-      @stdin     = stdin
-      @stdout    = stdout
     end
 
     def run
-      Config.stdin  = @stdin
-      Config.stdout = @stdout
       parse_options
       Rorr::Main.choose
     end
