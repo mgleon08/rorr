@@ -2,6 +2,7 @@ $: << File.dirname(__FILE__)
 
 require 'optparse'
 require 'colorize'
+require 'readline'
 
 require "rorr/version"
 

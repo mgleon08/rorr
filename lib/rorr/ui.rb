@@ -6,8 +6,7 @@ module Rorr
       end
 
       def gets
-        printf "> "
-        Config.stdin ? Config.stdin.gets.chomp! : ''
+        Config.stdin ? Readline.readline("> ", true) : ''
       end
 
       def puts_with_delay(msg)
