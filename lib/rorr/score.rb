@@ -1,27 +1,48 @@
 module Rorr
   class Score
-    @correct, @wrong, @skip = 0, 0, 0
+    @report = []
+    @total  = { correct: 0, wrong: 0, skip: 0, retry: 0 }
     class << self
-      attr_accessor :correct, :wrong, :skip
+      attr_reader :single, :total, :report
+
+      def init(index)
+        @single = { question: "#{index}.", correct: '', wrong: '', skip: '', retry: 0 }
+      end
 
       def add_correct
-        @correct += 1
+        total[:correct]  += 1
+        single[:correct] = '✓'
       end
 
       def add_wrong
-        @wrong += 1
+        total[:wrong]  += 1
+        single[:wrong] = '✓'
       end
 
       def add_skip
-        @skip += 1
+        total[:skip]  += 1
+        single[:skip] = '✓'
       end
 
-      def total
-        @correct + @wrong + @skip
+      def add_retry
+        total[:retry]  += 1
+        single[:retry] += 1
+      end
+
+      def add_report
+        report << single
+      end
+
+      def total_count
+        total[:correct] + total[:wrong] + total[:skip]
       end
 
       def correct_rate
-        ( correct.to_f / total.to_f )  * 100
+        ((total[:correct].to_f / total_count.to_f) * 100).round(2)
+      end
+
+      def wrong_rate
+        ((total[:wrong].to_f / total_count.to_f) * 100).round(2)
       end
     end
   end

@@ -19,6 +19,7 @@ describe Rorr::UI do
   it "should fetch gets from in stream" do
     @in.puts "bar"
     @in.rewind
+    allow(ui).to receive(:gets).and_return(@config.stdin.gets.chop!)
     expect(ui.gets).to eq("bar")
   end
 
