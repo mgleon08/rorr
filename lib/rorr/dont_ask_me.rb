@@ -4,7 +4,6 @@ module Rorr
       @dir       = ['ruby', 'rails']
       @questions = []
       create_questions
-      @questions.shuffle!
     end
 
     def start
@@ -51,6 +50,7 @@ module Rorr
           @questions << { qu: content[0], ans: dir, sol: content[1] }
         end
       end
+      @questions = @questions.shuffle[0..Config.number]
     end
   end
 end
