@@ -53,15 +53,19 @@ module Rorr
         end
         puts "---------------------------------"
         puts " #{repo_format(Score.total_count)} |  #{repo_format(Score.total[:correct])}  |  #{repo_format(Score.total[:wrong])}   |  #{repo_format(Score.total[:skip])}  |  #{repo_format(Score.total[:retry])}"
-        puts "\n#{"Correct Rate:".rjust(14)} #{Score.correct_rate.to_s.rjust(6)}%".green
-        puts "#{"Wrong Rate:".rjust(14)} #{Score.wrong_rate.to_s.rjust(6)}%".red
-        puts "#{"Skip Rate:".rjust(14)} #{Score.skip_rate.to_s.rjust(6)}%".light_blue
+        puts "\n#{repo_rjust("Correct Rate:", 14)} #{repo_rjust(Score.correct_rate, 6)}%".green
+        puts "#{repo_rjust("Wrong Rate:", 14)} #{repo_rjust(Score.wrong_rate, 6)}%".red
+        puts "#{repo_rjust("Skip Rate:", 14)} #{repo_rjust(Score.skip_rate, 6)}%".light_blue
         puts_with_delay "\nEnter to exit\n"
         gets
       end
 
-      def repo_format(input, color = nil)
-        color ? input.to_s.rjust(2).public_send(color) : input.to_s.rjust(2)
+      def repo_format(input, color = 'white')
+        repo_rjust(input).public_send(color)
+      end
+
+      def repo_rjust(input, length = 2)
+        input.to_s.rjust(length)
       end
 
       def skip
