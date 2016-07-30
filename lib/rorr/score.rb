@@ -44,6 +44,10 @@ module Rorr
       def wrong_rate
         ((total[:wrong].to_f / total_count.to_f) * 100).round(2)
       end
+
+      def skip_rate
+        ((total[:skip].to_f / total_count.to_f) * 100).round(2)
+      end
     end
   end
 end

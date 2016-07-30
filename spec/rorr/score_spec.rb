@@ -53,4 +53,8 @@ describe Rorr::Score do
   it '#wrong_rate' do
     expect(score.correct_rate).to eq(((1.0/3.0)*100).round(2))
   end
+
+  it '#skip_rate' do
+    expect(score.correct_rate).to eq(((1.0/3.0)*100).round(2))
+  end
 end

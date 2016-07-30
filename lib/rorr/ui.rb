@@ -55,6 +55,7 @@ module Rorr
         puts " #{repo_format(Score.total_count)} |  #{repo_format(Score.total[:correct])}  |  #{repo_format(Score.total[:wrong])}   |  #{repo_format(Score.total[:skip])}  |  #{repo_format(Score.total[:retry])}"
         puts "\n#{"Correct Rate:".rjust(14)} #{Score.correct_rate.to_s.rjust(6)}%".green
         puts "#{"Wrong Rate:".rjust(14)} #{Score.wrong_rate.to_s.rjust(6)}%".red
+        puts "#{"Skip Rate:".rjust(14)} #{Score.skip_rate.to_s.rjust(6)}%".light_blue
         puts_with_delay "\nEnter to exit\n"
         gets
       end
