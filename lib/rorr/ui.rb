@@ -23,6 +23,7 @@ module Rorr
         sleep_with_setting
         puts "\nChoose the topic you want to start"
         puts "1. Don't ask me Ruby or Rails"
+        puts "2. What's the return value?"
         puts "0. exit\n\n"
       end
 

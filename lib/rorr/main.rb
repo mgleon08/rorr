@@ -9,14 +9,15 @@ module Rorr
           when '1'
             game = DontAskMe.new
             break
-          when '0', 'exit'
-            UI.puts_with_delay "Goodbye!\n".yellow
-            exit
+          when '2'
+            game = ReturnValue.new
+            break
+          when '0', 'exit' then exit
           else
             UI.puts_with_delay "Please enter it again".light_blue
           end
         end
-        sleep(1)
+        UI.sleep_with_setting
         game.start
       end
     end
