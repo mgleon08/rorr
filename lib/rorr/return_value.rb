@@ -40,7 +40,7 @@ module Rorr
 
     def create_questions
       UI.puts "\nCreate Questions...\n"
-      Dir["./topic/questions/#{Config.level}/*.rb"].each do |file|
+      Dir[File.expand_path("../../../topic/questions/#{Config.level}/*.rb", __FILE__)].each do |file|
         qu  = `coderay -ruby #{file}`
         ans = qu_ans(File.read(file))
         @questions << { qu: qu, ans: ans, sol: "\n#{ans}\n" }
