@@ -24,13 +24,14 @@ module Rorr
         puts "\nChoose the topic you want to start"
         puts "1. Don't ask me Ruby or Rails"
         puts "2. What's the return value?"
+        puts "3. Methods?"
         puts "0. exit\n\n"
       end
 
       def question(question, index)
         sleep_with_setting
         puts "\n------------------------------"
-        puts "Question #{ index + 1 } :"
+        puts "Question #{ index } :"
         puts "------------------------------\n\n"
         puts "#{question}"
         puts "------------------------------\n"

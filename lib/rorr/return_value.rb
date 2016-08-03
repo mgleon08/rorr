@@ -9,9 +9,9 @@ module Rorr
       system "clear"
       UI.puts "\nWelcome to #{"\"What's the return value?\"".light_cyan}"
       UI.puts "Let's check how much do you understand ruby or rails\n"
-      @questions.each_with_index do |question, index|
+      @questions.each.with_index(1) do |question, index|
         UI.question(question[:qu], index)
-        Score.init(index+1)
+        Score.init(index)
         UI.puts "What's the return value? ( Type #{"Exception".green} if you expect an exception, #{UI.skip}, #{UI.exit} )\n\n"
         while answer = UI.gets
           case

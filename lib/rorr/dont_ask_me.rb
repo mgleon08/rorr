@@ -10,9 +10,9 @@ module Rorr
       system "clear"
       UI.puts "\nWelcome to #{"\"Don\'t ask me Ruby or Rails\"".light_cyan}"
       UI.puts "Let's check whether you remember where Ruby ends and Rails\n"
-      @questions.each_with_index do |question, index|
+      @questions.each.with_index(1) do |question, index|
         UI.question(question[:qu], index)
-        Score.init(index+1)
+        Score.init(index)
         UI.puts "ruby or rails? (Type #{"ruby".green} or #{"rails".green} to answer, #{UI.skip}, #{UI.exit} )\n\n"
         while answer = UI.gets
           case answer.downcase
