@@ -10,6 +10,7 @@ module Rorr
       system "clear"
       UI.puts "\nWelcome to #{"\"Don\'t ask me Ruby or Rails\"".light_cyan}"
       UI.puts "Let's check whether you remember where Ruby ends and Rails\n"
+      Score.start
       @questions.each.with_index(1) do |question, index|
         UI.question(question[:qu], index)
         Score.init(index)
@@ -38,6 +39,7 @@ module Rorr
         Score.add_report
         UI.solution(question[:sol])
       end
+      Score.finish
       UI.report
     end
 

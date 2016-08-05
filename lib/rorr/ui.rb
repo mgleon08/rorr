@@ -58,6 +58,7 @@ module Rorr
         puts "\n#{repo_rjust("Correct Rate:", 14)} #{repo_rjust(Score.correct_rate, 6)}%".green
         puts "#{repo_rjust("Wrong Rate:", 14)} #{repo_rjust(Score.wrong_rate, 6)}%".red
         puts "#{repo_rjust("Skip Rate:", 14)} #{repo_rjust(Score.skip_rate, 6)}%".light_blue
+        puts "#{repo_rjust("Spend Time:", 14)} #{repo_rjust(Score.time, 6)}s".light_blue
         puts_with_delay "\nEnter to exit\n"
         gets
       end

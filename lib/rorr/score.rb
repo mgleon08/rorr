@@ -3,7 +3,7 @@ module Rorr
     @report = []
     @total  = { correct: 0, wrong: 0, skip: 0, retry: 0 }
     class << self
-      attr_reader :single, :total, :report
+      attr_reader :single, :total, :report, :time, :start_time, :finish_time
 
       def init(index)
         @single = { question: "#{index}.", correct: '', wrong: '', skip: '', retry: 0 }
@@ -47,6 +47,15 @@ module Rorr
 
       def skip_rate
         ((total[:skip].to_f / total_count.to_f) * 100).round(2)
+      end
+
+      def start
+        @start_time = Time.now
+      end
+
+      def finish
+        @finish_time = Time.now
+        @time = (finish_time - start_time).round(2)
       end
     end
   end

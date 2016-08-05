@@ -9,6 +9,7 @@ module Rorr
       system "clear"
       UI.puts "\nWelcome to #{"\"What's the return value?\"".light_cyan}"
       UI.puts "Let's check how much do you understand ruby or rails\n"
+      Score.start
       @questions.each.with_index(1) do |question, index|
         UI.question(question[:qu], index)
         Score.init(index)
@@ -33,6 +34,7 @@ module Rorr
         Score.add_report
         UI.solution(question[:sol])
       end
+      Score.finish
       UI.report
     end
 
