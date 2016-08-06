@@ -57,6 +57,10 @@ module Rorr
         @finish_time = Time.now
         @time = (finish_time - start_time).round(2)
       end
+
+      def format_time
+        Time.at(Score.time).utc.strftime("%H:%M:%S")
+      end
     end
   end
 end

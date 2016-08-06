@@ -55,10 +55,10 @@ module Rorr
         end
         puts "---------------------------------"
         puts " #{repo_format(Score.total_count)} |  #{repo_format(Score.total[:correct])}  |  #{repo_format(Score.total[:wrong])}   |  #{repo_format(Score.total[:skip])}  |  #{repo_format(Score.total[:retry])}"
-        puts "\n#{repo_rjust("Correct Rate:", 14)} #{repo_rjust(Score.correct_rate, 6)}%".green
-        puts "#{repo_rjust("Wrong Rate:", 14)} #{repo_rjust(Score.wrong_rate, 6)}%".red
-        puts "#{repo_rjust("Skip Rate:", 14)} #{repo_rjust(Score.skip_rate, 6)}%".light_blue
-        puts "#{repo_rjust("Spend Time:", 14)} #{repo_rjust(Score.time, 6)}s".light_blue
+        puts "\n#{repo_rjust("Correct Rate:", 14)} #{repo_rjust(Score.correct_rate, 7)}%".green
+        puts "#{repo_rjust("Wrong Rate:", 14)} #{repo_rjust(Score.wrong_rate, 7)}%".red
+        puts "#{repo_rjust("Skip Rate:", 14)} #{repo_rjust(Score.skip_rate, 7)}%".light_blue
+        puts "\n#{repo_rjust("Spend Time:", 14)} #{repo_rjust(Score.format_time, 7)}".light_magenta
         puts_with_delay "\nEnter to exit\n"
         gets
       end
