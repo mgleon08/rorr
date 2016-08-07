@@ -10,7 +10,7 @@ describe Rorr::Score do
 
   it '#init' do
     score.init(1)
-    expect(score.single).to eq({ question: "1.", correct: '', wrong: '', skip: '', retry: 0 })
+    expect(score.single).to eq({ question: "1.", correct: '', skip: '', retry: 0, color:'' })
   end
 
   it '#add_correct' do
@@ -21,8 +21,8 @@ describe Rorr::Score do
 
   it '#add_wrong' do
     score.add_wrong
-    expect(score.total[:wrong]).to eq(1)
-    expect(score.single[:wrong]).to eq('✓')
+    expect(score.total[:correct]).to eq(1)
+    expect(score.single[:correct]).to eq('✗')
   end
 
   it '#add_skip' do
