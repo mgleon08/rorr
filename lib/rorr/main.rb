@@ -12,6 +12,9 @@ module Rorr
           when '2'
             game = ReturnValue.new
             break
+          when '3'
+            game = TestPass.new
+            break
           when '0', 'exit' then exit
           else
             UI.puts_with_delay "Please enter it again".light_blue

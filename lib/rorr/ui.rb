@@ -24,7 +24,7 @@ module Rorr
         puts "\nChoose the topic you want to start"
         puts "1. Don't ask me Ruby or Rails"
         puts "2. What's the return value?"
-        puts "3. Methods?"
+        puts "3. Make all test pass"
         puts "0. exit\n\n"
       end
 
@@ -37,8 +37,8 @@ module Rorr
         puts "------------------------------\n"
       end
 
-      def solution(sol)
-        puts_with_delay "\nsolution:#{sol.light_green}"
+      def solution(sol=nil)
+        puts_with_delay "\nsolution:#{sol.light_green}" if sol
         puts_with_delay "Enter to next"
         gets
         system "clear"
