@@ -48,7 +48,7 @@ module Rorr
     def create_questions
       @dir.each do |dir|
         Dir[File.expand_path("../../../topic/#{dir}/*.rb", __FILE__)].each do |file|
-          content = File.open(file).read.split('#=====')
+          content = File.open(file).read.split('# solution')
           @questions << { qu: content[0], ans: dir, sol: content[1] }
         end
       end
