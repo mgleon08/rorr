@@ -49,7 +49,9 @@ module Rorr
       @dir.each do |dir|
         Dir[File.expand_path("../../../topic/#{dir}/*.rb", __FILE__)].each do |file|
           content = File.open(file).read.split('# solution')
-          @questions << { qu: content[0], ans: dir, sol: content[1] }
+          qu  = UI.coderay(content[0])
+          sol = UI.coderay(content[1])
+          @questions << { qu: qu, ans: dir, sol: sol }
         end
       end
       @questions = @questions.shuffle[0..Config.number]

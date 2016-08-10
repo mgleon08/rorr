@@ -38,8 +38,8 @@ module Rorr
       end
 
       def solution(sol=nil)
-        puts_with_delay "\nsolution:#{sol.light_green}" if sol
-        puts_with_delay "Enter to next"
+        puts_with_delay "\nsolution:\n".light_magenta + "#{sol}" if sol
+        puts_with_delay "\nEnter to next"
         gets
         system "clear"
       end
@@ -76,6 +76,10 @@ module Rorr
 
       def exit
         "#{"exit".red} to exit"
+      end
+
+      def coderay(input)
+        CodeRay.scan(input, :ruby).terminal
       end
     end
   end

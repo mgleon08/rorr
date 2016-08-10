@@ -43,9 +43,10 @@ module Rorr
     def create_questions
       UI.puts "\nCreate Questions...\n"
       Dir[File.expand_path("../../../topic/questions/#{Config.level}/*.rb", __FILE__)].each do |file|
-        qu  = `coderay -ruby #{file}`
+        qu  = UI.coderay(File.read(file))
         ans = qu_ans(File.read(file))
-        @questions << { qu: qu, ans: ans, sol: "\n#{ans}\n" }
+        sol = UI.coderay(ans)
+        @questions << { qu: "#{qu}\n", ans: ans, sol: "\n#{sol}\n" }
       end
       @questions = @questions[0..Config.number]
     end
