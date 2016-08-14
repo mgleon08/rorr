@@ -57,4 +57,10 @@ describe Rorr::Score do
   it '#skip_rate' do
     expect(score.correct_rate).to eq(((1.0/3.0)*100).round(2))
   end
+
+  it '#finish' do
+    score.start
+    time = score.finish
+    expect(time).to eq((score.finish_time - score.start_time).round(2))
+  end
 end

@@ -34,4 +34,25 @@ describe Rorr::UI do
     ui.puts_with_delay("foo")
     expect(ui).to have_received(:sleep)
   end
+
+  it "#sleep_with_setting" do
+    @config.delay = 1
+    allow(ui).to receive(:sleep_with_setting).and_return(true)
+    expect(ui.sleep_with_setting).to eq(true)
+  end
+
+  it "#repo_format" do
+    expect(ui.repo_format('hello')).to eq("\e[0;37;49mhello\e[0m")
+    expect(ui.repo_format('hello', 'green')).to eq("\e[0;32;49mhello\e[0m")
+  end
+
+  it "#repo_rjust" do
+    expect(ui.repo_rjust(1).class).to eq(String)
+    expect(ui.repo_rjust(2)).to eq(" 2")
+    expect(ui.repo_rjust(3, 5)).to eq("    3")
+  end
+
+  it "#coderay" do
+    expect(ui.coderay('#hello')).to eq("\e[1;34m#hello\e[0m")
+  end
 end
