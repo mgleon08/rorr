@@ -17,7 +17,7 @@ module Rorr
         while answer = UI.gets
           case
           when match_ans?(answer, question[:ans])
-            UI.puts "Yes, this is #{question[:ans]}!".green
+            UI.puts "Correct!".green
             Score.add_correct
             break
           when answer == 'skip'
