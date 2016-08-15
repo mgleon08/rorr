@@ -38,7 +38,7 @@ module Rorr
       end
 
       def solution(sol=nil)
-        puts_with_delay "\nsolution:\n".light_magenta + "#{sol}" if sol
+        puts_with_delay "\nsolution:\n".light_magenta + "#{sol}" if sol && Config.solution
         puts_with_delay "\nEnter to next"
         gets
         system "clear"
