@@ -13,7 +13,7 @@ module Rorr
       @questions.each.with_index(1) do |question, index|
         UI.question(question[:qu], index)
         Score.init(index)
-        UI.puts "What's the return value? ( Type #{"Exception".green} if you expect an exception, #{UI.skip}, #{UI.exit} )\n\n"
+        UI.puts "What's the return value? ( Type the #{"Exception".green} command if you expect an exception, #{UI.skip}, #{UI.exit} )\n\n"
         while answer = UI.gets
           case
           when match_ans?(answer, question[:ans])

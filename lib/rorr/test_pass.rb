@@ -19,14 +19,14 @@ module Rorr
         generate_file(index)
         while answer = UI.gets
           case answer.downcase
-          when 'check'
+          when 'rorr'
             if check_answer(index)
               Score.add_correct
               break
             end
             UI.sleep_with_setting
             UI.puts "\nPlease Try Again. Make all tests pass."
-            UI.puts "Type #{"check".green} to check, #{UI.skip}, #{UI.exit}"
+            UI.puts "Type #{"rorr".green} to check, #{UI.skip}, #{UI.exit}"
             Score.add_retry
           when 'skip'
             UI.puts "Skip the Question!".light_blue
@@ -56,11 +56,9 @@ module Rorr
 
     def generate_file(index)
       generate_question(index) unless File.exist?(generate_file_path(index))
-
       UI.puts "\nQuestion #{basename(index).light_yellow} has been generated."
-      UI.puts "See the #{"#{generate_file_path(index)}/README".light_yellow} for question."
-      UI.puts "Add your code to #{"#{generate_file_path(index)}/play.rb".light_yellow} for answer."
-      UI.puts "\nWhen you save file. Type #{"check".green} to check, #{UI.skip}, #{UI.exit}\n"
+      UI.puts "See the #{"#{generate_file_path(index)}/README".light_yellow} for instructions."
+      UI.puts "\nWhen you're done editing player.rb. Type the #{"rorr".green} command to check, #{UI.skip}, #{UI.exit}\n"
     end
 
     def generate_question(index)
