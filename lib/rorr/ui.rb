@@ -38,7 +38,7 @@ module Rorr
       end
 
       def solution(sol=nil)
-        puts_with_delay "\nsolution:\n".light_magenta + "#{sol}" if sol && Config.solution
+        puts_with_delay "\n solution: \n".on_green.black + "#{sol}" if sol && Config.solution
         puts_with_delay "\nEnter to next"
         gets
         system "clear"
@@ -48,13 +48,13 @@ module Rorr
         system "clear"
         puts_with_delay "\n Test Report \n\n"
         sleep_with_setting
-        puts " Q. | Corr | Skip | Retry "
+        puts " Q.  | Corr | Skip | Retry "
         puts "-------------------------"
         Score.report.each do |r|
-          puts " #{repo_format(r[:question])} |  #{repo_format(r[:correct], r[:color])}  |  #{repo_format(r[:skip], r[:color])}  |  #{repo_format(r[:retry])}"
+          puts " #{repo_rjust(r[:question], 3)} |  #{repo_format(r[:correct], r[:color])}  |  #{repo_format(r[:skip], r[:color])}  |  #{repo_format(r[:retry])}"
         end
         puts "-------------------------"
-        puts " #{repo_format(Score.total_count)} |  #{repo_format(Score.total[:correct])}  |  #{repo_format(Score.total[:skip])}  |  #{repo_format(Score.total[:retry])}"
+        puts " #{repo_rjust(Score.total_count, 3)} |  #{repo_format(Score.total[:correct])}  |  #{repo_format(Score.total[:skip])}  |  #{repo_format(Score.total[:retry])}"
         puts "\n#{repo_rjust("Correct Rate:", 14)} #{repo_rjust(Score.correct_rate, 7)}%".green
         puts "#{repo_rjust("Skip Rate:", 14)} #{repo_rjust(Score.skip_rate, 7)}%".light_blue
         puts "\n#{repo_rjust("Spend Time:", 14)} #{repo_rjust(Score.format_time, 7)}".light_magenta
