@@ -1,0 +1,2 @@
+ary = []
+ary ? true : false
