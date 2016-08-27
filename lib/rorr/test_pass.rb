@@ -1,5 +1,6 @@
 module Rorr
   class TestPass
+    include Base
     attr_accessor :index, :questions
 
     def initialize
@@ -41,6 +42,7 @@ module Rorr
         UI.solution
       end
       Score.finish
+      Score.export_report
       UI.report
     end
 
@@ -74,15 +76,7 @@ module Rorr
     end
 
     def generate_file_path(index)
-      Config.path_prefix + "/rorr/#{Config.level}/#{basename(index)}"
-    end
-
-    def templates_path
-      File.expand_path("../../../templates", __FILE__)
-    end
-
-    def read_template(path)
-      ERB.new(File.read(path), nil).result(binding)
+      generate_file_base_path + "/#{basename(index)}"
     end
 
     def check_answer(index)

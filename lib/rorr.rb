@@ -10,6 +10,7 @@ require 'spec_helper'
 
 require "rorr/version"
 
+require "rorr/base"
 require "rorr/ui"
 require "rorr/init"
 require "rorr/main"

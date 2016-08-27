@@ -1,5 +1,6 @@
 module Rorr
   class Score
+    extend Base
     @report = []
     @total  = { correct: 0, wrong: 0, skip: 0, retry: 0 }
     class << self
@@ -63,6 +64,12 @@ module Rorr
 
       def format_time
         Time.at(Score.time).utc.strftime("%H:%M:%S")
+      end
+
+      def export_report
+        File.open(generate_file_base_path + '/Report', 'w') do |f|
+          f.write read_template(templates_path + '/report.erb')
+        end
       end
     end
   end
