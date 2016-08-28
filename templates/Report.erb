@@ -3,10 +3,10 @@ Test Report
  Q. | Corr | Skip | Retry
 -------------------------
 <%report.each do |r| -%>
-<%="#{r[:question].rjust(3)} |  #{r[:correct]}   |  #{r[:skip]}    | #{r[:retry].to_s.rjust(3)}"%>
+<%="#{r[:question].rjust(3)} |#{r[:correct].rjust(4)}  |#{r[:skip].rjust(4)}  |#{r[:retry].to_s.rjust(4)}"%>
 <%end-%>
 -------------------------
-<%="#{total_count.to_s.rjust(3)} | #{total[:correct].to_s.rjust(3)}  |#{total[:skip].to_s.rjust(3)}   | #{total[:retry].to_s.rjust(3)}"%>
+<%="#{total_count.to_s.rjust(3)} |#{total[:correct].to_s.rjust(4)}  |#{total[:skip].to_s.rjust(4)}  |#{total[:retry].to_s.rjust(4)}"%>
 
 Correct Rate: <%=correct_rate%>%
 Skip Rate:    <%=skip_rate%>%
