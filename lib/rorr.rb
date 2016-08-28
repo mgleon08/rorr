@@ -7,6 +7,7 @@ require 'fileutils'
 require 'erb'
 require 'rspec'
 require 'spec_helper'
+require 'coderay'
 
 require 'rorr/version'
 
