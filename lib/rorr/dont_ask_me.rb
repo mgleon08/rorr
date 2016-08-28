@@ -1,20 +1,20 @@
 module Rorr
   class DontAskMe
     def initialize
-      @dir       = ['ruby', 'rails']
+      @dir       = %w(ruby rails)
       @questions = []
       create_questions
     end
 
     def start
-      system "clear"
-      UI.puts "\nWelcome to #{"\"Don\'t ask me Ruby or Rails\"".light_cyan}"
+      system 'clear'
+      UI.puts "\nWelcome to #{"\"Don't ask me Ruby or Rails\"".light_cyan}"
       UI.puts "Let's check whether you remember where Ruby ends and Rails\n"
       Score.start
       @questions.each.with_index(1) do |question, index|
         UI.question(question[:qu], index)
         Score.init(index)
-        UI.puts "ruby or rails? (Type the #{"ruby".green} or #{"rails".green} to answer, #{UI.skip}, #{UI.exit})\n\n"
+        UI.puts "ruby or rails? (Type the #{'ruby'.green} or #{'rails'.green} to answer, #{UI.skip}, #{UI.exit})\n\n"
         while answer = UI.gets
           case answer.downcase
           when question[:ans]
@@ -26,13 +26,13 @@ module Rorr
             Score.add_wrong
             break
           when 'skip'
-            UI.puts "Skip the Question!".light_blue
+            UI.puts 'Skip the Question!'.light_blue
             Score.add_skip
             break
           when 'exit' then exit
-          when '' then UI.puts_with_delay "Please enter again!".light_blue
+          when '' then UI.puts_with_delay 'Please enter again!'.light_blue
           else
-            UI.puts_with_delay "Error, Please enter again!".light_red
+            UI.puts_with_delay 'Error, Please enter again!'.light_red
             Score.add_retry
           end
         end

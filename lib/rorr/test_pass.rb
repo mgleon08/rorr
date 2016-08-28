@@ -9,8 +9,8 @@ module Rorr
     end
 
     def start
-      system "clear"
-      UI.puts "\nWelcome to #{"\"Make all tests pass\"".light_cyan}"
+      system 'clear'
+      UI.puts "\nWelcome to #{'"Make all tests pass"'.light_cyan}"
       UI.puts "Let's check how much do you proficiency in ruby or rails\n"
       Score.start
       @questions.each.with_index(1) do |question, index|
@@ -27,15 +27,15 @@ module Rorr
             end
             UI.sleep_with_setting
             UI.puts "\nPlease Try Again. Make all tests pass."
-            UI.puts "Type #{"rorr".green} to check, #{UI.skip}, #{UI.exit}"
+            UI.puts "Type #{'rorr'.green} to check, #{UI.skip}, #{UI.exit}"
             Score.add_retry
           when 'skip'
-            UI.puts "Skip the Question!".light_blue
+            UI.puts 'Skip the Question!'.light_blue
             Score.add_skip
             break
           when 'exit' then exit
           else
-            UI.puts_with_delay "Please enter again!".light_blue
+            UI.puts_with_delay 'Please enter again!'.light_blue
           end
         end
         Score.add_report
@@ -62,7 +62,7 @@ module Rorr
       generate_question(index) unless File.exist?(generate_file_path(index))
       UI.puts "\nQuestion #{basename(index).light_yellow} has been generated."
       UI.puts "See the #{"#{generate_file_path(index)}/README".light_yellow} for instructions."
-      UI.puts "\nWhen you're done editing player.rb, type the #{"rorr".green} to check, #{UI.skip}, #{UI.exit}\n"
+      UI.puts "\nWhen you're done editing player.rb, type the #{'rorr'.green} to check, #{UI.skip}, #{UI.exit}\n"
     end
 
     def generate_question(index)
