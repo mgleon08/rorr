@@ -8,7 +8,8 @@ describe Rorr::Config do
     expect(config.stdout).to eq(STDOUT)
     expect(config.delay).to  eq(0.6)
     expect(config.level).to  eq('normal')
-    expect(config.number).to eq(-1)
+    expect(config.number).to eq(9)
     expect(config.path_prefix).to eq('.')
+    expect(config.solution).to eq(false)
   end
 end

@@ -63,4 +63,8 @@ describe Rorr::Score do
     time = score.finish
     expect(time).to eq((score.finish_time - score.start_time).round(2))
   end
+
+  it '#format_time' do
+    expect(score.format_time).to eq("00:00:00")
+  end
 end
