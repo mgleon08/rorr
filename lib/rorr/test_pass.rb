@@ -39,7 +39,7 @@ module Rorr
           end
         end
         Score.add_report
-        UI.solution
+        UI.solution(question[:sol])
       end
       Score.finish
       Score.export_report
@@ -50,8 +50,10 @@ module Rorr
 
     def create_questions
       Dir[File.expand_path("../../../topic/methods/#{Config.level}/*.rb", __FILE__)].each do |file|
-        content = File.open(file).read.split("#method\n")
-        @questions << { qu: content[0], me: content[1] }
+        content = File.open(file).read.split("# methods\n")
+        method  = content[1].split("\n")[0]
+        sol     = UI.coderay(content[1])
+        @questions << { qu: content[0], me: method, sol: "\n#{sol}" }
       end
       @questions = @questions[0..Config.number]
     end
