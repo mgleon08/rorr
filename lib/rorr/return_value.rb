@@ -48,7 +48,7 @@ module Rorr
         sol = UI.coderay(ans)
         @questions << { qu: "#{qu}\n", ans: ans, sol: "\n#{sol}\n" }
       end
-      @questions = @questions[0..Config.number]
+      @questions = @questions.shuffle[0..Config.number]
     end
 
     def qu_ans(code)
