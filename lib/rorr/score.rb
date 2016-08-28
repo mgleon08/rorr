@@ -11,13 +11,13 @@ module Rorr
       end
 
       def add_correct
-        total[:correct]  += 1
+        total[:correct] += 1
         single[:correct] = '✓'
         single[:color] = 'green'
       end
 
       def add_wrong
-        total[:wrong]  += 1
+        total[:wrong] += 1
         single[:correct] = '✗'
         single[:color] = 'red'
       end
@@ -63,7 +63,7 @@ module Rorr
       end
 
       def format_time
-        Time.at(Score.time).utc.strftime("%H:%M:%S")
+        Time.at(Score.time).utc.strftime('%H:%M:%S')
       end
 
       def export_report

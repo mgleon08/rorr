@@ -1,7 +1,7 @@
 module Rorr
   module Base
     def templates_path
-      File.expand_path("../../../templates", __FILE__)
+      File.expand_path('../../../templates', __FILE__)
     end
 
     def read_template(path)

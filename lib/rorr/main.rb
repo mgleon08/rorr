@@ -2,7 +2,7 @@ module Rorr
   class Main
     class << self
       def choose
-        system "clear"
+        system 'clear'
         UI.menu
         while Config.topic = UI.gets
           case Config.topic
@@ -17,7 +17,7 @@ module Rorr
             break
           when '0', 'exit' then exit
           else
-            UI.puts_with_delay "Please enter it again".light_blue
+            UI.puts_with_delay 'Please enter it again'.light_blue
           end
         end
         UI.sleep_with_setting
