@@ -53,6 +53,8 @@ module Rorr
 
     def qu_ans(code)
       eval(code)
+    rescue SyntaxError => e
+      SyntaxError
     rescue => e
       Exception
     end
