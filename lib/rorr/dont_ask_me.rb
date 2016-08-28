@@ -14,7 +14,7 @@ module Rorr
       @questions.each.with_index(1) do |question, index|
         UI.question(question[:qu], index)
         Score.init(index)
-        UI.puts "ruby or rails? (Type #{"ruby".green} or #{"rails".green} to answer, #{UI.skip}, #{UI.exit} )\n\n"
+        UI.puts "ruby or rails? (Type the #{"ruby".green} or #{"rails".green} to answer, #{UI.skip}, #{UI.exit})\n\n"
         while answer = UI.gets
           case answer.downcase
           when question[:ans]

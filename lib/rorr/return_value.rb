@@ -8,12 +8,12 @@ module Rorr
     def start
       system "clear"
       UI.puts "\nWelcome to #{"\"What's the return value?\"".light_cyan}"
-      UI.puts "Let's check how much do you understand ruby or rails\n"
+      UI.puts "Let's check how much do you proficiency in ruby or rails\n"
       Score.start
       @questions.each.with_index(1) do |question, index|
         UI.question(question[:qu], index)
         Score.init(index)
-        UI.puts "What's the return value? ( Type the #{"Exception".green} command if you expect an exception, #{UI.skip}, #{UI.exit} )\n\n"
+        UI.puts "What's the return value? (Type the #{"Exception".green} or #{"SyntaxError".green} if you expect it will return, #{UI.skip}, #{UI.exit})\n\n"
         while answer = UI.gets
           case
           when match_ans?(answer, question[:ans])

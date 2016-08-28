@@ -71,7 +71,7 @@ module Rorr
       end
 
       def skip
-        "#{"skip".light_blue} to pass"
+        "#{"skip".light_blue} to next question"
       end
 
       def exit

@@ -10,11 +10,11 @@ module Rorr
 
     def start
       system "clear"
-      UI.puts "\nWelcome to #{"\"Make all test pass\"".light_cyan}"
-      UI.puts "Let's check how much do you understand ruby or rails\n"
-      UI.sleep_with_setting
+      UI.puts "\nWelcome to #{"\"Make all tests pass\"".light_cyan}"
+      UI.puts "Let's check how much do you proficiency in ruby or rails\n"
       Score.start
       @questions.each.with_index(1) do |question, index|
+        UI.sleep_with_setting
         self.index = index - 1
         Score.init(index)
         generate_file(index)
@@ -62,7 +62,7 @@ module Rorr
       generate_question(index) unless File.exist?(generate_file_path(index))
       UI.puts "\nQuestion #{basename(index).light_yellow} has been generated."
       UI.puts "See the #{"#{generate_file_path(index)}/README".light_yellow} for instructions."
-      UI.puts "\nWhen you're done editing player.rb. Type the #{"rorr".green} command to check, #{UI.skip}, #{UI.exit}\n"
+      UI.puts "\nWhen you're done editing player.rb, type the #{"rorr".green} to check, #{UI.skip}, #{UI.exit}\n"
     end
 
     def generate_question(index)
