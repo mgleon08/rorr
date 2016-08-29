@@ -53,6 +53,6 @@ describe Rorr::UI do
   end
 
   it "#coderay" do
-    expect(ui.coderay('#hello')).to eq("\e[1;34m#hello\e[0m")
+    expect(ui.coderay('#hello')).to eq("\e[1;30m#hello\e[0m")
   end
 end
