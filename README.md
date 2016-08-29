@@ -3,6 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/rorr.svg)](https://badge.fury.io/rb/rorr)
 [![Code Climate](https://codeclimate.com/github/mgleon08/rorr/badges/gpa.svg)](https://codeclimate.com/github/mgleon08/rorr)
 [![Build Status](https://travis-ci.org/mgleon08/rorr.svg?branch=master)](https://travis-ci.org/mgleon08/rorr)
+[![security](https://hakiri.io/github/mgleon08/rorr/master.svg)](https://hakiri.io/github/mgleon08/rorr/master)
 
 RorR(Ruby or Rails) is a test designed to evaluate the Ruby or Rails proficiency and artificial intelligence in a fun, interactive way.
 
