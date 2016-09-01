@@ -20,6 +20,7 @@ Then run the `rorr` command to start
 
 ```
 $ rorr
+$ gem install rorr --no-ri #without doc
 ```
 
 Have three topics
