@@ -8,6 +8,8 @@
 
 RorR(Ruby or Rails) is a test designed to evaluate the Ruby or Rails proficiency and artificial intelligence in a fun, interactive way.
 
+![](screenshots/rorr_demo.gif)
+
 ## Installation
 
 ```
