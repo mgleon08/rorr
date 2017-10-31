@@ -16,7 +16,7 @@ RorR(Ruby or Rails) is a test designed to evaluate the Ruby or Rails proficiency
 $ gem install rorr
 ```
 
-##Getting Started
+## Getting Started
 
 Then run the `rorr` command to start
 
@@ -39,7 +39,7 @@ Choose the topic you want to start
 >
 ```
 
-###Topic1: Don't ask me Ruby or Rails
+### Topic1: Don't ask me Ruby or Rails
 
 This is to check whether you remember where Ruby ends and Rails.
 
@@ -59,7 +59,7 @@ ruby or rails? (Type the ruby or rails to answer, skip to next question, exit to
 >
 ```
 
-###Topic2: What's the return value?
+### Topic2: What's the return value?
 
 This will show you the several pieces of code. You should type the code returned values to answer.
 
@@ -82,7 +82,7 @@ What's the return value? (Type the Exception or SyntaxError if you expect it wil
 You can type `Exception` & `SyntaxError` to answer if you expect it will return.
 
 
-###Topic3: Make all test pass
+### Topic3: Make all test pass
 
 This will create a rorr directory in your current location where you find a `player.rb` and `README` file.
 
@@ -102,7 +102,7 @@ When you're done editing player.rb, type the rorr to check, skip to next questio
 ```
 
 
-###Test Report
+### Test Report
 
 In finish it will show you test report.
 
@@ -130,7 +130,7 @@ In finish it will show you test report.
    Spend Time: 00:00:33
 ```
 
-##Run Options
+## Run Options
 You can run `rorr -h` for help
 
 ```
@@ -141,7 +141,7 @@ Usage: rorr [options]
 -h, --help            Show this message
 ```
 
-##Questions Reference
+## Questions Reference
 
 If you have good questions welcome to pull requests or comments
 on GitHub at [`https://github.com/mgleon08/rorr/pulls`](https://github.com/mgleon08/rorr/pulls)
